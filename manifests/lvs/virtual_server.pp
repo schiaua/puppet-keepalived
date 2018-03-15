@@ -51,6 +51,14 @@
 #   Integer.
 #   Defaults to unset => does not appear in config.
 #
+# [*quorum_up*]
+#   String.
+#   Defaults to unset => no action for quorum_up
+#
+# [*quorum_down*]
+#   String.
+#   Defaults to unset => no action for quorum_down
+#
 # [*hysteresis*]
 #   Integer.
 #   Defaults to unset => does not appear in config.
@@ -112,6 +120,8 @@ define keepalived::lvs::virtual_server (
   $persistence_timeout = undef,
   $protocol            = 'TCP',
   $quorum              = undef,
+  $quorum_up           = undef,
+  $quorum_down         = undef,
   $real_servers        = undef,
   $sorry_server        = undef,
   $tcp_check           = undef,
